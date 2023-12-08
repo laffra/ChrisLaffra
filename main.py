@@ -346,7 +346,7 @@ def show(index):
         body.animate(ltk.to_js({ "scrollTop": height - 800 }), 1500, 'swing', lambda:
             body.animate(ltk.to_js({ "scrollTop": 0 }), 300, 'swing')
         )
-        ltk.find("#main").animate(ltk.to_js({ "left": 0 }))
+        # ltk.find("#main").animate(ltk.to_js({ "left": 0 }))
         return
     x = ltk.parse_float(item.css("left"))
     y = ltk.parse_float(item.css("top"))
