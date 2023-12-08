@@ -9,7 +9,7 @@ class Main(ltk.Widget):
             self,
             *items
         )
-        self.width(1500).height(850).attr("id", "main")
+        self.width(min(1500, width)).height(850).attr("id", "main").css("margin", "auto")
 
 
 class Item(ltk.Widget):
@@ -274,12 +274,14 @@ tiles = [
             .css("margin-bottom", 50),
         ltk.VBox(
             ltk.Heading2("For more details select any item shown in the visual resume above or in the list below")
+                .css("width", min(400, width - 250))
                 .css("color", "gray")
+                .css("margin-right", 100)
                 .css("text-align", "center"),
             ltk.Div(*tiles)
                 .attr("id", "tiles")
         )
-        .css("width", width - 50)
+        .css("width", min(800, width - 50))
         .css("margin-left", width * 0.1)
         .css("align-items", "center")
         .css("margin", "auto")
